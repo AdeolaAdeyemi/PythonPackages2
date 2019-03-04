@@ -2,8 +2,6 @@
 import pandas as pd
 import csv
 dataPath = 'C:/Users/adeola.adeyemi/Downloads/movies_metadata.csv.csv'
-f = open(dataPath, 'r')
-print (f.read)
 #Importing Pandas Dataframe
 import pandas as pd
 data = pd.read_csv('C:/Users/adeola.adeyemi/Downloads/movies_metadata.csv.csv')
