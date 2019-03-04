@@ -1,0 +1,25 @@
+#Opening and reading Movie Metadata file
+import pandas as pd
+import csv
+dataPath = 'C:/Users/adeola.adeyemi/Downloads/movies_metadata.csv.csv'
+f = open(dataPath, 'r')
+print (f.read)
+#Importing Pandas Dataframe
+import pandas as pd
+data = pd.read_csv('C:/Users/adeola.adeyemi/Downloads/movies_metadata.csv.csv')
+#Set index to the movie title
+data = data.set_index('original_title')
+#Details of the movie 'Grumpier Old Men'
+result = data.loc['Grumpier Old Men']
+print ("The details of the movie Grumpier Old Men:")
+print (result)
+#Sort DataFrame values by Release date
+from pandas import DataFrame
+new_data = data[['title', 'release_date', 'budget', 'revenue', 'runtime']]
+rr = new_data.sort_values('release_date')
+print ("Please find below the dataframe values sorted by release date: ")
+print (rr)
+#Movies whose revenue earned more than 2 million and spent less than 1 million
+print ("Movies with Revenue of more than 2m and Budget of less than 1m: ")
+result = new_data[(new_data['revenue']>'2000000') & (new_data['budget'] < 1000000)]
+print (result)
